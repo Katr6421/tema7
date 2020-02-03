@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>areal</title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <!--
+    <p>Længde</p>
+    <input type="number" id="l">
+
+    <p>brede</p>
+    <input type="number" id="b">
+
+    <button id="knap">Klik og kig i console</button>
+-->
+
+
+
+    <script>
+        let længde = prompt("Angiv længde")
+        let bredden = prompt("Angiv bredde")
+
+        function areal(l, b) {
+            let a = (l * b);
+            if (a == 0) {
+                return (`Husk længde og brede skal være tal. Prøv igen`);
+            } else if (isNaN(a)) {
+                return (`fejl.  Prøv igen med et tal`);
+            } else {
+                return (`Arealet er ${a}. Vil du lave et nyt areal?`);
+            }
+        }
+
+        let resultat = areal(længde, bredden);
+        confirm(resultat);
+
+    </script>
+</body>
+
+</html>
