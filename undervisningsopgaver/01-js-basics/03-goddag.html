@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goddag</title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+    <p>Hvad hedder du?</p>
+
+    <input type="text" id="name">
+    <button id="knap">Klik og kig i console</button>
+
+
+
+    <script>
+        let minKnap = document.querySelector("#knap");
+
+        minKnap.addEventListener("click", funktionDerSkalAktiveresNårDerKlikkes);
+
+        function funktionDerSkalAktiveresNårDerKlikkes() {
+            console.log("Jeg har klikket på knappen");
+
+            let brugernavn = document.querySelector("#name").value;
+
+            console.log("Godmorgen " + brugernavn);
+
+        }
+
+    </script>
+</body>
+
+</html>
