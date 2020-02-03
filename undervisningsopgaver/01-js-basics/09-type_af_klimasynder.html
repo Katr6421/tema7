@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klimasynder</title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+    <p>Timer du skal flyve</p>
+    <input type="number" id="timer">
+    <button id="knap">Klik her og kig i console</button>
+
+    <script>
+        let resultat;
+        let minKnap = document.querySelector("#knap");
+        minKnap.addEventListener("click", visCO2);
+
+        function visCO2() {
+            console.log("Jeg har klikket på knappen");
+
+            let tid = document.querySelector("#timer").value;
+            let CO2 = 109;
+
+
+
+
+            if (co2Beregning(tid, CO2) < 100) {
+                resultat = `Du har fløjet ${tid} timer og udledt ${co2Beregning(tid, CO2)} kg Co2. Tæt på Thunberg.`;
+
+
+            } else if (co2Beregning(tid, CO2) > 100 && co2Beregning(tid, CO2) < 200) {
+                resultat = `Du har fløjet ${tid} timer og udledt ${co2Beregning(tid, CO2)} kg Co2. Ja, du behøver ikke at melde dig ud af Å!.`;
+
+
+
+
+            } else if (co2Beregning(tid, CO2) > 200 && co2Beregning(tid, CO2) < 600) {
+                resultat = `Du har fløjet ${tid} timer og udledt ${co2Beregning(tid, CO2)} kg Co2. Det er godt for turismen i nordeuropa`;
+
+
+
+            } else if (co2Beregning(tid, CO2) > 600) {
+
+                resultat = `Du har fløjet ${tid} timer og udledt ${co2Beregning(tid, CO2)} kg Co2. Nå ja vi kan jo altid kolonisere en anden planet ...`;
+
+
+
+            }
+            console.log(resultat);
+        }
+        console.log(resultat);
+
+
+
+
+
+        function co2Beregning(tid, CO2) {
+            return (tid * CO2);
+        }
+
+    </script>
+</body>
+
+</html>
