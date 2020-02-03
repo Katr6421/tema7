@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Co2 beregning</title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <p>Timer du skal flyve</p>
+    <input type="number" id="timer">
+    <button id="knap">Klik her og kig i console</button>
+
+
+
+
+    <script>
+        let minKnap = document.querySelector("#knap");
+        minKnap.addEventListener("click", visCO2);
+
+        function visCO2() {
+            console.log("Jeg har klikket på knappen");
+
+            let tid = document.querySelector("#timer").value;
+            let CO2 = 109;
+            //            let areal = bredden * længde;
+            let resultat = `CO2 forbruget er ${co2Beregning(tid, CO2 )} kg`;
+            console.log(resultat);
+        }
+
+
+
+        function co2Beregning(tid, CO2) {
+            console.log("co2 beregning")
+            return (tid * CO2);
+
+        }
+
+    </script>
+</body>
+
+</html>
