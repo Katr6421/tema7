@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>areal</title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <p>Længde</p>
+    <input type="number" id="l">
+
+    <p>brede</p>
+    <input type="number" id="b">
+
+    <button id="knap">Klik og kig i console</button>
+
+
+
+    <script>
+        let minKnap = document.querySelector("#knap");
+
+        minKnap.addEventListener("click", funktionDerSkalAktiveresNårDerKlikkes);
+
+        function funktionDerSkalAktiveresNårDerKlikkes() {
+            console.log("Jeg har klikket på knappen");
+
+            let længde = document.querySelector("#l").value;
+            let bredden = document.querySelector("#b").value;
+            let areal = bredden * længde;
+            let resultat = `Arealet er ${areal} kvadratmeter`;
+
+
+            console.log(resultat);
+
+        }
+
+    </script>
+</body>
+
+</html>
