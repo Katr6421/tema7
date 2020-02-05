@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indhold</title>
+
+    <style>
+        #content div:nth-child(1) {
+            height: 200px;
+            width: 200px;
+            line-height: 200px;
+            text-align: center;
+            background-color: green;
+        }
+
+        #content div:nth-child(2) {
+            height: 200px;
+            width: 200px;
+            line-height: 200px;
+            border-radius: 50%;
+            text-align: center;
+            background-color: red;
+        }
+
+        /*
+        img {
+        width: 100%;
+        height: 100%;
+        }
+*/
+
+    </style>
+
+
+</head>
+
+<body>
+
+
+
+    <section id="content">
+        <div class="firkant"></div>
+        <div class="cirkel"></div>
+    </section>
+
+    <script>
+        //        const firkant = document.querySelector("#content div:nth-child(1)");
+        //        console.log(firkant);
+        //
+        //        const cirkel = document.querySelector("#content div:nth-child(2)");
+        //        console.log(cirkel);
+
+        //indsætter tekst med js
+        // firkant.textContent = "Grøn firkant";
+        // cirkel.textContent = "Rød cirkel";
+
+
+        let firkantURL = `http://mabe-kea.dk/E19/pics/frog.png`;
+        let cirkelURL = `http://mabe-kea.dk/E19/pics/pig.png`;
+        let fogURL = `http://mabe-kea.dk/E19/pics/fox.png`;
+
+
+
+        //indsætter billederne med js
+        document.querySelector(".cirkel").innerHTML = `<img src = ${cirkelURL}>`;
+        document.querySelector(".firkant").innerHTML = `<img src = ${firkantURL}>`;
+        document.querySelector(".cirkel").innerHTML += `<img src = ${fogURL}>`;
+
+    </script>
+</body>
+
+</html>
