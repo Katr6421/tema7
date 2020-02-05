@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indhold</title>
+
+    <style>
+        #content div:nth-child(1) {
+            height: 200px;
+            width: 200px;
+            line-height: 200px;
+            text-align: center;
+            background-color: green;
+            cursor: pointer;
+        }
+
+        #content div:nth-child(2) {
+            height: 200px;
+            width: 200px;
+            line-height: 200px;
+            border-radius: 50%;
+            text-align: center;
+            background-color: red;
+            cursor: pointer;
+
+        }
+
+    </style>
+
+
+</head>
+
+<body>
+
+
+
+    <section id="content">
+        <div class="firkant"></div>
+        <div class="cirkel"></div>
+    </section>
+
+    <script>
+        //        const firkant = document.querySelector("#content div:nth-child(1)");
+        //        console.log(firkant);
+        //
+        //        const cirkel = document.querySelector("#content div:nth-child(2)");
+        //        console.log(cirkel);
+
+        //indsætter tekst med js
+        // firkant.textContent = "Grøn firkant";
+        // cirkel.textContent = "Rød cirkel";
+
+
+        let firkantURL = `http://mabe-kea.dk/E19/pics/frog.png`;
+        let cirkelURL = `http://mabe-kea.dk/E19/pics/pig.png`;
+        let fogURL = `http://mabe-kea.dk/E19/pics/fox.png`;
+
+        let cirkel = document.querySelector(".cirkel");
+        let firkant = document.querySelector(".firkant");
+
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            console.log("Start")
+            //indsætter billederne med js
+            document.querySelector(".cirkel").innerHTML = `<img src = ${cirkelURL}>`;
+            document.querySelector(".firkant").innerHTML = `<img src = ${firkantURL}>`;
+
+
+            firkant.addEventListener("click", clickFirkant);
+            cirkel.addEventListener("click", clickCirkel);
+        }
+
+        function clickFirkant() {
+            console.log("jeg har klikket på firkanten")
+            firkant.innerHTML = `<img src = ${cirkelURL}>`;
+            cirkel.innerHTML = `<img src = ${firkantURL}>`;
+
+            firkant.style.backgroundColor = "blue";
+            firkant.style.transition = "2s";
+
+            cirkel.style.backgroundColor = "pink";
+            cirkel.style.transition = "2s";
+
+
+
+
+            firkant.removeEventListener("click", clickFirkant);
+            firkant.addEventListener("click", start);
+
+
+        }
+
+        function clickCirkel() {
+            console.log("jeg har klikket på cirkelen")
+
+            cirkel.removeEventListener("click", clickCirkel);
+            cirkel.addEventListener("click", start);
+
+            firkant.style.backgroundColor = "yellow";
+            firkant.style.transition = "2s";
+
+            cirkel.style.backgroundColor = "black";
+            cirkel.style.transition = "2s";
+        }
+
+    </script>
+</body>
+
+</html>
