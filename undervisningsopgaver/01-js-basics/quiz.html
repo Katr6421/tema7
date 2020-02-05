@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+</head>
+
+
+
+<body>
+
+    <section id="content">
+
+        <h1>Er jorden rund?</h1>
+        <input type="text">
+        <button id="svar">Svar</button>
+        <button id="noeste">Næste spørgsmål</button>
+        <div id="point">0</div>
+        <p>Svaret er</p>
+
+    </section>
+
+
+
+
+    <script>
+        let spørgsmål = document.querySelector("h1");
+        let input = document.querySelector("input");
+        let svarknap = document.querySelector("#svar");
+        let næstespørgsmålknap = document.querySelector("#noeste");
+
+
+        let svar = document.querySelector("p");
+        let point = document.querySelector("point");
+        let redultat;
+
+            svarknap.addEventListener("click", spørgsmål1);
+
+        function spørgsmål1() {
+
+            let inputsvar = input.value;
+
+
+
+
+            if (inputsvar == "ja") {
+                point++;
+                console.log(point)
+
+                svar.textContent = "Svaret er rigtigt";
+
+
+
+
+            } else {
+                svar.textContent = "Svaret er forkert";
+
+            }
+
+            svarknap.removeEventListener("click", spørgsmål1)
+            næstespørgsmålknap.addEventListener("click",spørgsmål2 )
+
+
+        }
+
+         function spørgsmål2(){
+              point--;
+             spørgsmål.textContent = "Er en banan gul?"
+
+             let inputsvar = input.value;
+
+
+
+            if (inputsvar == "ja") {
+                point++;
+                console.log(point)
+
+                svar.textContent = "Svaret er rigtig";
+
+
+
+            } else {
+                svar.textContent = "Svaret er forkert";
+
+            }
+             næstespørgsmålknap.removeEventListener("click", spørgsmål2);
+            næstespørgsmålknap.addEventListener("click",spørgsmål3 );
+               inputsvar.offsetHeight;
+
+         }
+
+        function spørgsmål3(){
+            spørgsmål.textContent = "Kan man spise insekter uden at dø?"
+             let inputsvar = input.value;
+
+            if (inputsvar == "ja") {
+                point++;
+                console.log(point)
+
+                svar.textContent = "Svaret er rigtig";
+
+
+            } else {
+                svar.textContent = "Svaret er forkert";
+
+            }
+             næstespørgsmålknap.removeEventListener("click", spørgsmål3)
+            næstespørgsmålknap.addEventListener("click",spørgsmål4 )
+             inputsvar.offsetHeight;
+        }
+
+        function spørgsmål4(){
+            spørgsmål.textContent = "Er katte søde? Ja eller nej"
+             let inputsvar = input.value;
+
+            if (inputsvar == "ja") {
+                point++;
+                console.log(point)
+
+                svar.textContent = "Svaret er rigtig";
+
+
+            } else {
+                svar.textContent = "Svaret er forkert";
+
+            }
+             næstespørgsmålknap.removeEventListener("click", spørgsmål4)
+            næstespørgsmålknap.addEventListener("click",spørgsmål5 )
+             inputsvar.offsetHeight;
+        }
+
+        function spørgsmål5(){
+            spørgsmål.textContent = "Kan katte lide fisk?"
+             let inputsvar = input.value;
+
+            if (inputsvar == "ja") {
+                point++;
+                console.log(point)
+
+                svar.textContent = "Svaret er rigtig";
+
+
+            } else {
+                svar.textContent = "Svaret er forkert";
+
+            }
+             næstespørgsmålknap.removeEventListener("click", spørgsmål5)
+             inputsvar.offsetHeight;
+//            næstespørgsmålknap.addEventListener("click",spørgsmål5 )
+        }
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+
+    <style>
+        div {
+            background: blue;
+            height: 100px;
+            width: 100px;
+            margin: 1em;
+            display: inline-block;
+
+        }
+
+        .red {
+            background-color: red;
+            cursor: pointer;
+        }
+
+        .green {
+            background-color: green;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="red"></div>
+    <div class="red"></div>
+    <div class=""></div>
+    <div class="red"></div>
+    <div class="red"></div>
+
+
+    <script>
+        const redboks = document.querySelectorAll(".red");
+        console.log(redboks);
+        redboks.forEach(kasse => kasse.addEventListener("click", blivBlå));
+
+        function blivBlå() {
+            console.log(this);
+
+            //            this.style.backgroundColor = "green";
+            this.classList.toggle("green");
+        }
+
+    </script>
+
+</body>
+
+</html>

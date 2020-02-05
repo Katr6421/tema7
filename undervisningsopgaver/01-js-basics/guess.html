@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gæt et tal</title>
+</head>
+
+<style>
+    .hide {
+        display: none;
+    }
+
+</style>
+
+<body>
+
+    <h1>Gæt et tal</h1>
+    <input id="inputsvar" type="number">
+    <button id="knap">Tjek dit svar</button>
+
+
+    <p id="tekst">Her ser du om du har gættet rigtigt, for højt eller for lavt</p>
+    <button class="hide" id="replayknap">Spil igen!</button>
+
+
+
+
+
+
+    <script>
+        let input = document.querySelector("#inputsvar");
+        let replayknap = document.querySelector("#replayknap");
+
+        let knap = document.querySelector("#knap");
+        let tekst = document.querySelector("#tekst");
+        let gæt = 0;
+        let tal = Math.round(Math.random() * 20);
+        console.log(tal);
+        //et tilfædigt tal mellem 0 og 20
+
+
+        // funktioner
+        window.addEventListener("load", randomTal); {
+
+        }
+
+
+        function randomTal() {
+
+
+            knap.addEventListener("click", clickKnap);
+            document.querySelector("#knap").removeEventListener("click", randomTal);
+
+
+        }
+
+        function clickKnap() {
+            console.log("Jeg har klikket på knappen");
+            let inputsvar = input.value;
+            console.log(inputsvar);
+            console.log(tal);
+
+            replayknap.classList.add("hide");
+
+
+
+
+            gæt++;
+            console.log(gæt);
+
+            if (inputsvar == tal) {
+                tekst.textContent = `Jaaaaa du gættede rigtigt! Du havde ${gæt} gæt. Vil du spille igen?!"`;
+                replayknap.classList.remove("hide");
+                replay();
+
+
+            } else if (inputsvar > tal) {
+                tekst.textContent = "Tallet er for højt, prøv igen!"
+            } else if (inputsvar < tal) {
+                tekst.textContent = "Tallet er for lavt, prøv igen!"
+            }
+
+        }
+
+
+
+        function replay() {
+            console.log("jeg er ved replay")
+            tal = Math.round(Math.random() * 20);
+            console.log(tal);
+            gæt = 0;
+            replayknap.addEventListener("click", clickKnap);
+            gæt--;
+        }
+
+    </script>
+
+</body>
+
+</html>

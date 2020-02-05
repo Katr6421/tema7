@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>klimasynder</title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+    <p>Hvor mange timer skal du flyve?</p>
+    <input type="number" id="timer">
+    <button id="knap">Klik her og kig i console</button>
+
+    <script>
+        let minKnap = document.querySelector("#knap");
+        minKnap.addEventListener("click", visCO2);
+        let tid = document.querySelector("#timer").value;
+        let CO2 = 109;
+        let a = (tid * CO2);
+
+
+        function visCO2() {
+            console.log("Jeg har klikket på knappen");
+
+
+
+            //            let areal = bredden * længde;
+
+            if (a == 0) {
+                return (`Husk timer skal være tal. Prøv igen`);
+            } else if (isNaN(a)) {
+                return (`Fejl.  Prøv igen med et tal`);
+            } else {
+                return (`CO2 forbruget er ${a}. kg CO2?`);
+            }
+
+
+
+
+            let resultat = `CO2 forbruget er ${co2Beregning(tid, CO2 )} kg`;
+            console.log(resultat);
+        }
+
+
+
+        function co2Beregning(tid, CO2) {
+            console.log("co2 beregning")
+            let a = (tid * CO2);
+
+        }
+
+    </script>
+</body>
+
+</html>

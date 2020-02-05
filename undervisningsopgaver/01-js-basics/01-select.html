@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <section id="content">
+        <div> <a href="https://kea.dk/">Link til KEAs hjemmeside</a></div>
+        <div> <a href="https://github.com/Katr6421/tema7">Link til github</a> </div>
+        <div> <img src="frog.png"> </div>
+    </section>
+    <script>
+        // vælger den trejde div
+        // const element = document.querySelector("div + div + div");
+
+        // vælger den anden div
+
+        const element = document.querySelector("#content div:nth-child(1)");
+        console.log(element);
+
+        const element2 = document.querySelector("#content div:nth-child(2)");
+        console.log(element2);
+
+        const element3 = document.querySelector("#content div:nth-child(3)");
+        console.log(element3);
+
+        // får tagsene med
+        element.textContent = "<h1>Dette er den første </h1>"
+
+        // får ikke tagsene med, indsætter det som html
+        element.innerHTML = "<h1>Dette er den første </h1>"
+
+    </script>
+
+
+
+</body>
+
+</html>
