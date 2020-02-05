@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Date</title>
+</head>
+
+<body>
+
+    <h1>Daterådgivning. Du kender reglen! Tjek om din date og din alder er passende for hinanden. </h1>
+
+    <p>Din alder</p>
+    <input type="number" id="din_alder">
+
+    <p>Din dates alder</p>
+    <input type="number" id="date_alder">
+
+    <button>Tjek svaret</button>
+
+    <p id="tekst">Se resultetet her</p>
+
+
+
+    <script>
+        let tekst = document.querySelector("#tekst");
+        let knap = document.querySelector("button");
+        window.addEventListener("load", clickKnap); {}
+
+
+
+        function clickKnap() {
+            knap.addEventListener("click", visResultat);
+        }
+
+        function visResultat() {
+            let dinAlderInput = document.querySelector("#din_alder");
+            let dinAlder = dinAlderInput.value;
+            console.log(dinAlder);
+
+            let dateAlderInput = document.querySelector("#date_alder");
+            let dateAlder = dateAlderInput.value;
+            console.log(dateAlder);
+
+            let tekst = document.querySelector("#tekst");
+
+
+            if ((dinAlder / 2 + 7) == dateAlder) {
+                console.log()
+                document.querySelector("#tekst").textContent = "Din alder passer til din dates";
+            } else if ((dateAlder.value / 2 + 7) == dinAlder) {
+                document.querySelector("#tekst").textContent = "Din dates alder passer til din";
+            } else if (dinAlder < 15 && dateAlder < 15) {
+                document.querySelector("#tekst").textContent = "Man skal være over 15 år!";
+            } else {
+                document.querySelector("#tekst").textContent = "Ingen af jeres aldrer passer reglen";
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
