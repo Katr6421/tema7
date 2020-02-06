@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gris</title>
+</head>
+
+
+
+<body>
+
+    <article></article>
+
+
+    <script>
+        const dyr = {
+                "navn": "gris",
+                "type": "pattefyr",
+                "billede": "http://mabe-kea.dk/E19/pics/pig.png",
+                "levested": "svinefarme"
+            },
+            {
+                "navn": "frø",
+                "type": "amfibie",
+                "billede": "ttp://mabe-kea.dk/E19/pics/frog.png",
+                "levested": "sumb"
+            }, {
+                "navn": "ræv",
+                "type": "pattedyr",
+                "billede": "http://mabe-kea.dk/E19/pics/fox.png",
+                "levested": "Skov"
+            }, {
+                "navn": "sild",
+                "type": "fisk",
+                "billede": "http://mabe-kea.dk/E19/pics/sild.jpg",
+                "levested": "Vand"
+            }, {
+                "navn": "Krokodille",
+                "type": "Krybdyr",
+                "billede": "http://mabe-kea.dk/E19/pics/kroko.jpg",
+                "levested": "Vand"
+            }
+
+
+        console.log(dyr);
+        console.log("Dyr: gris, type: pattedyr, levested: svinefarme")
+
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+
+            const article = document.querySelector("article");
+
+            // article.textContent = dyr.navn;
+            // article.textContent += dyr.type;
+            // article.textContent += dyr.levested;
+            // article.src += dyr.billede;
+
+            article.textContent = "Dyr: gris, type: pattedyr, levested: svinefarme";
+
+            article.innerHTML += "<br>"
+
+
+            // insætter billedet
+            let img = document.createElement("img");
+
+            img.src = "http://mabe-kea.dk/E19/pics/pig.png";
+
+            document.querySelector("article").appendChild(img);
+
+
+
+
+
+        }
+
+    </script>
+
+</body>
+
+</html>

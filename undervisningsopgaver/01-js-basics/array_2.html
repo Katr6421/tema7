@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Array</title>
+</head>
+
+<style>
+    /*
+    #display {
+        width: 200vw;
+        height: 20vh;
+        border: 1px solid silver;
+        margin: 7vw;
+        padding: 1vw;
+    }
+*/
+
+</style>
+
+<body>
+
+    <ul id="display"></ul>
+
+    <script>
+        let playlist = ["Search", "Lose You To Love Me", "Barking", "King Of The Jungle", "Boss Up", "U Cry", "Thinking Bout You", "Boyfriend", "Dark Times", "Let It Go"]
+
+        //viser hvor mange der er i listen
+
+
+        // tager en af gangen, og her har vi lavet en ananymfunktion
+        playlist.forEach(sang => {
+            console.log(sang);
+            let element = document.createElement("li");
+            let mySong = document.createTextNode(sang);
+
+            element.appendChild(mySong);
+            document.querySelector("#display").appendChild(element);
+        })
+
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>

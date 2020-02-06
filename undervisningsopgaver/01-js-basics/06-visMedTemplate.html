@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gris</title>
+
+
+    <style>
+        .dyr {
+            border: 2px solid black;
+            margin: 5px;
+        }
+
+        article:nth-child(even) {
+            background-color: hotpink;
+        }
+
+        .dyr:first-child {
+            border: 4px solid blue;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            max-width: 1000px;
+            margin: 0 auto;
+            grid-gap: 10px;
+        }
+
+    </style>
+</head>
+
+
+
+<body>
+
+    <section class="container">
+        <template>
+
+            <article class="dyr">
+                <h3></h3>
+                <img src="" alt="">
+                <p>Type: </p>
+                <p>Levested</p>
+            </article>
+        </template>
+    </section>
+
+    <main></main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", visDyr)
+        let dyr = [{
+                "navn": "gris",
+                "type": "pattefyr",
+                "billede": "http://mabe-kea.dk/E19/pics/pig.png",
+                "levested": "svinefarme"
+            }, {
+                "navn": "frø",
+                "type": "amfibie",
+                "billede": "http://mabe-kea.dk/E19/pics/frog.png",
+                "levested": "sumb"
+            },
+            {
+                "navn": "ræv",
+                "type": "pattedyr",
+                "billede": "http://mabe-kea.dk/E19/pics/fox.png",
+                "levested": "Skov"
+            }, {
+                "navn": "sild",
+                "type": "fisk",
+                "billede": "http://mabe-kea.dk/E19/pics/sild.jpg",
+                "levested": "Vand"
+            }, {
+                "navn": "Krokodille",
+                "type": "Krybdyr",
+                "billede": "http://mabe-kea.dk/E19/pics/kroko.jpg",
+                "levested": "Vand"
+            }
+        ]
+        console.log(dyr);
+
+        function visDyr() {
+            const container = document.querySelector(".container");
+            const dyrTemplate = document.querySelector("template");
+
+            //løb listen igennem og indsæt data i en template
+
+            dyr.forEach(art => {
+                let klon = dyrTemplate.cloneNode(true).content;
+                klon.querySelector("h3").textContent = art.navn;
+
+                klon.querySelector("img").src = art.billede;
+
+                klon.querySelector("p").textContent += art.type;
+
+                klon.querySelector("p:last-child").textContent += art.levested;
+
+                container.appendChild(klon);
+
+            })
+        }
+
+    </script>
+
+</body>
+
+</html>

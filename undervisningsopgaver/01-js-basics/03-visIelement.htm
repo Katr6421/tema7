@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gris</title>
+</head>
+
+
+
+<body>
+
+    <article id="dyr">
+        <h3></h3>
+        <img src="" alt="">
+        <p>Type: </p>
+        <p>Levested</p>
+
+    </article>
+
+
+    <script>
+        console.log(dyr);
+        console.log("Dyr: gris, type: pattedyr, levested: svinefarme")
+
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            const dyr = {
+                "navn": "gris",
+                "type": "pattefyr",
+                "billede": "http://mabe-kea.dk/E19/pics/pig.png",
+                "levested": "svinefarme"
+            }
+            const articleDyr = document.querySelector("#dyr");
+
+
+            //indsæt i allerede lavet html
+            articleDyr.querySelector("h3").textContent = dyr.navn;
+
+            articleDyr.querySelector("img").src = dyr.billede;
+
+            articleDyr.querySelector("p").textContent += dyr.type;
+
+            articleDyr.querySelector("p:last-child").textContent += dyr.levested;
+
+
+
+
+
+
+
+
+
+        }
+
+    </script>
+
+</body>
+
+</html>
