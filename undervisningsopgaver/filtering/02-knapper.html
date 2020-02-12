@@ -38,6 +38,18 @@
             text-align: center;
         }
 
+        .valgt {
+            background-color: hotpink;
+            color: white;
+        }
+
+
+        nav {
+            display: flex;
+            justify-content: center;
+            margin: 2rem;
+        }
+
     </style>
 </head>
 
@@ -45,6 +57,13 @@
 
 <body>
 
+    <nav>
+        <button class="filter valgt" data-køn="alle">Alle</button>
+        <button class="filter" data-køn="m">Mænd</button>
+        <button class="filter" data-køn="k">Kvinder</button>
+        <button class="filter" data-køn="andet">Andet</button>
+
+    </nav>
 
     <section class="container">
         <template>
@@ -68,6 +87,7 @@
     <script>
         let personer = []
         const endpoint = "https://spreadsheets.google.com/feeds/list/1XWWbfWszD7f4jHqp51V_oT3pkHuR-ceEUw4YtrvK7F0/od6/public/values?alt=json";
+        let filter = "alle";
 
 
         document.addEventListener("DOMContentLoaded", start);
@@ -90,25 +110,28 @@
 
         function visPersoner() {
             const container = document.querySelector(".container");
-            const dyrTemplate = document.querySelector("template");
+            const TheTemplate = document.querySelector("template");
 
             //løb listen igennem og indsæt data i en template
 
             personer.feed.entry.forEach(person => {
 
-                let klon = dyrTemplate.cloneNode(true).content;
-                klon.querySelector("h2").textContent = person.gsx$navn.$t;
-                klon.querySelector("h2").textContent += " " + person.gsx$efternavn.$t;
-                klon.querySelector("img").src = person.gsx$billede.$t;
-                klon.querySelector(".sex").textContent += person.gsx$sex.$t;
-                klon.querySelector(".alder").textContent += person.gsx$alder.$t;
-                klon.querySelector(".religion").textContent += person.gsx$religion.$t;
-                klon.querySelector(".hobby").textContent += person.gsx$hobby.$t;
-                klon.querySelector(".koeledyr").textContent += person.gsx$kaeledyr.$t;
-                klon.querySelector(".job").textContent += person.gsx$job.$t;
-                klon.querySelector(".by").textContent += person.gsx$by.$t;
+                if (person.gsx$sex.$t == filter) {
 
-                container.appendChild(klon);
+                    let klon = TheTemplate.cloneNode(true).content;
+                    klon.querySelector("h2").textContent = person.gsx$navn.$t;
+                    klon.querySelector("h2").textContent += " " + person.gsx$efternavn.$t;
+                    klon.querySelector("img").src = person.gsx$billede.$t;
+                    klon.querySelector(".sex").textContent += person.gsx$sex.$t;
+                    klon.querySelector(".alder").textContent += person.gsx$alder.$t;
+                    klon.querySelector(".religion").textContent += person.gsx$religion.$t;
+                    klon.querySelector(".hobby").textContent += person.gsx$hobby.$t;
+                    klon.querySelector(".koeledyr").textContent += person.gsx$kaeledyr.$t;
+                    klon.querySelector(".job").textContent += person.gsx$job.$t;
+                    klon.querySelector(".by").textContent += person.gsx$by.$t;
+
+                    container.appendChild(klon);
+                }
 
             })
         }

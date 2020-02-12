@@ -1,0 +1,303 @@
+/* Generelle indstillinger */
+
+img {
+    width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+
+}
+
+body {
+    margin: 0;
+}
+
+/* Generelle indstillinger slut */
+
+.personer {
+    background-color: #C9C2AD;
+    transition: 0.2s
+}
+
+.personer:hover {
+    transform: translateY(-10px);
+    box-shadow: 5px 5px 8px #888888;
+    /*    box-shadow: 5px 10px red:*/
+}
+
+
+.infoboksomret {
+    text-align: center;
+    margin-top: 1em;
+}
+
+.filter:hover {
+    background-color: #222E32;
+    color: #EDE5CE;
+
+}
+
+
+/*
+article:nth-child(even) {
+    background-color: hotpink;
+}
+*/
+
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    width: 47vw;
+    margin: 0 auto;
+    grid-gap: 17px;
+    cursor: pointer;
+}
+
+img {
+    width: 100%;
+}
+
+
+h2 {
+    font: 400 11px system-ui;
+    font-size: 1.2vw;
+    margin: 0;
+    font-weight: bold;
+    color: #222E32;
+}
+
+p {
+    font: 400 11px system-ui;
+    font-size: 1vw;
+    line-height: 1.5rem;
+    letter-spacing: 0.5px;
+    color: #222E32;
+}
+
+.pris {
+    margin: 1px;
+    font-weight: bold;
+    font-size: 0.9rem;
+
+}
+
+.valgt {
+    background-color: #222E32;
+    color: #EDE5CE;
+}
+
+/*
+
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2rem;
+}
+*/
+
+button {
+    width: 18rem;
+    height: 3rem;
+    border-radius: 0.8rem;
+    text-align: center;
+
+    padding: 0.6rem;
+
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+}
+
+
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+
+    font: 400 11px system-ui;
+    font-size: 4.2vw;
+    margin-top: 0;
+
+    font-weight: bold;
+    color: #222E32;
+
+}
+
+/* header start */
+
+header {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 2rem;
+
+    flex-direction: row;
+}
+
+#headerwrapper {
+    display: flex;
+    width: 100vw;
+    height: 20vh;
+    justify-content: space-around;
+}
+
+#headerwrapper img {
+    height: 3vw;
+    width: 2vw;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    font-family: export, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+.thebigcontainer {
+    background-color: #EDE5CE;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+body {
+    background-color: #222E32;
+}
+
+.sectionswrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col_narrow {
+    flex-grow: 1;
+    flex-basis: 120px;
+    width: 100%;
+}
+
+.col_wide {
+    flex-basis: 365px;
+    flex-grow: 2;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.knapcontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: fixed;
+    left: 11.5vw;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+/* popup */
+#detalje {
+    /*
+    position: fixed;
+    top: 0;
+    left: 0;
+*/
+
+    /*
+    background-color: rgba(0, 0, 0, .5);
+    overflow: scroll;
+*/
+
+
+}
+
+#person-detalje {
+    background-color: #EDE5CE;
+    width: 100%;
+    display: flex;
+}
+
+#luk {
+    font-size: 2rem;
+
+    margin-bottom: 1em;
+
+    display: flex;
+    font-size: 2rem;
+    text-align: right;
+    background-color: transparent;
+    padding: 0.6rem;
+    width: auto;
+
+    text-decoration: none;
+    font-size: 2rem;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#luk:hover {
+    background-color: #222E32;
+    color: #C9C2AD;
+}
+
+.gem {
+    display: none;
+}
+
+.detaljeboks {
+    /*
+    width: 100vw;
+    height: 100vw;
+
+    display: flex
+*/
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    height: 88vh;
+}
+
+.image {
+    width: 100%;
+    margin: 0
+}
+
+#detalje img {
+    height: 88vh;
+    object-fit: cover;
+    object-position: center;
+}
+
+.tekst {
+    flex-basis: 300px;
+    flex-grow: 1;
+    padding: 2em;
+}
+
+.tekst p {
+    text-align: center;
+    font-size: 2vw;
+}
+
+#detalje h1 {
+    margin: 0;
+}
+
+
+.col {
+
+    flex-basis: 300px;
+    flex-grow: 1;
+}

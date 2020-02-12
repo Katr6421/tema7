@@ -1,0 +1,305 @@
+/* Generelle indstillinger */
+
+img {
+    width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+
+}
+
+body {
+    margin: 0;
+}
+
+/* Generelle indstillinger slut */
+
+.personer {
+    background-color: #C9C2AD;
+}
+
+.personer:hover {
+    transform: translateY(-10px);
+    box-shadow: 5px 5px 8px #888888;
+    /*    box-shadow: 5px 10px red:*/
+}
+
+.infoboksomret {
+    text-align: center;
+    margin-top: 1em;
+}
+
+.filter:hover {
+    background-color: #222E32;
+    color: #EDE5CE;
+}
+
+p {
+    font: 400 11px system-ui;
+    font-size: 1vw;
+    line-height: 1.5rem;
+    letter-spacing: 0.5px;
+    color: #222E32;
+    justify-content: center;
+}
+
+
+/*
+article:nth-child(even) {
+    background-color: hotpink;
+}
+*/
+
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    width: 49vw;
+    margin: 0 auto;
+    grid-gap: 17px;
+}
+
+img {
+    width: 100%;
+}
+
+#bigoverskrift {
+    margin-bottom: 3vw;
+}
+
+
+h2 {
+    font: 400 11px system-ui;
+    font-size: 1.2vw;
+    margin: 0;
+    font-weight: bold;
+    color: #222E32;
+}
+
+p {
+    font: 400 11px system-ui;
+    font-size: 1vw;
+    line-height: 1.5rem;
+    letter-spacing: 0.5px;
+    color: #222E32;
+    text-align: center;
+}
+
+.pris {
+    margin: 1px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    justify-content: center;
+
+}
+
+
+.valgt {
+    background-color: #222E32;
+    color: #EDE5CE;
+}
+
+/*
+
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2rem;
+}
+*/
+
+button {
+    width: 18rem;
+    height: 3rem;
+    border-radius: 0.8rem;
+    text-align: center;
+
+    padding: 0.6rem;
+
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: none;
+
+
+}
+
+
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+
+    font: 400 11px system-ui;
+    font-size: 4.2vw;
+    margin-bottom: 0;
+
+    font-weight: bold;
+    color: #222E32;
+
+}
+
+/* header start */
+
+header {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 2rem;
+
+    flex-direction: row;
+}
+
+#headerwrapper {
+    display: flex;
+    width: 100vw;
+    height: 20vh;
+    justify-content: space-around;
+}
+
+#headerwrapper img {
+    height: 3vw;
+    width: 2vw;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    font-family: export, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+#thebigcontainer {
+    background-color: #EDE5CE;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+body {
+    background-color: #222E32;
+}
+
+.sectionswrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col_narrow {
+    flex-grow: 1;
+    flex-basis: 120px;
+    width: 100%;
+}
+
+.col_wide {
+    flex-basis: 365px;
+    flex-grow: 2;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.knapcontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    left: 11.5vw;
+}
+
+@media only screen and (min-width: 1000px) {
+    .knapcontainer {
+        position: fixed;
+    }
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+/* popup */
+#detalje {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .5);
+    overflow: scroll;
+
+
+}
+
+#person-detalje {
+    background-color: #EDE5CE;
+
+    display: flex;
+    justify-content: center;
+}
+
+#luk {
+    font-size: 2rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-align: right;
+    background-color: transparent;
+    padding: 0.6rem;
+    width: auto;
+
+    text-decoration: none;
+    font-size: 2rem;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+}
+
+#luk:hover {
+    background-color: #222E32;
+    color: #C9C2AD;
+}
+
+.gem {
+    display: none;
+}
+
+.detaljeboks {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    position: fixed;
+    top: 15vw;
+    left: 0;
+    right: 0;
+}
+
+.image {
+    width: 100%;
+    margin: 0
+}
+
+.tekst {
+    flex-basis: 300px;
+    flex-grow: 1;
+    position: relative;
+    background-color: #C9C2AD;
+
+}
+
+.tekst p:last-child {
+    margin: 42px;
+}
+
+.col {
+
+    flex-basis: 300px;
+    flex-grow: 1;
+}

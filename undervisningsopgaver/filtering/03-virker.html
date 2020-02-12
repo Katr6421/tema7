@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Personliste</title>
+
+
+    <style>
+        .personer {
+            border: 2px solid black;
+            margin: 5px;
+            padding: 5px;
+            box-shadow: 5px 10px 18px #888888:
+        }
+
+        article:nth-child(even) {
+            background-color: hotpink;
+        }
+
+        .dyr:first-child {
+            border: 4px solid blue;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            max-width: 1000px;
+            margin: 0 auto;
+            grid-gap: 10px;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        p,
+        h2 {
+            text-align: center;
+        }
+
+        .valgt {
+            background-color: hotpink;
+            color: white;
+        }
+
+
+        nav {
+            display: flex;
+            justify-content: center;
+            margin: 2rem;
+        }
+
+        button {
+            padding: 1rem;
+            border-radius: 16px;
+            box-shadow: 5px 10px #888888;
+
+        }
+
+        button:hover {
+            filter: blur(10px);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+    </style>
+</head>
+
+
+
+<body>
+
+    <h1>Alle</h1>
+    <nav>
+        <button class="filter valgt" data-køn="alle">Alle</button>
+        <button class="filter" data-køn="m">Mænd</button>
+        <button class="filter" data-køn="k">Kvinder</button>
+        <button class="filter" data-køn="andet">Andet</button>
+
+    </nav>
+
+
+
+    <section class="container">
+        <template>
+
+            <article class="personer">
+                <h2></h2>
+                <img src="" alt="">
+                <p class="sex">Køn: </p>
+                <p class="alder">Alder: </p>
+                <p class="religion">Religion: </p>
+                <p class="hobby">Hobby: </p>
+                <p class="koeledyr">Kæledyr: </p>
+                <p class="job">Job: </p>
+                <p class="by">By: </p>
+            </article>
+        </template>
+    </section>
+
+    <main></main>
+
+    <script>
+        let personer = []
+        const endpoint = "https://spreadsheets.google.com/feeds/list/1XWWbfWszD7f4jHqp51V_oT3pkHuR-ceEUw4YtrvK7F0/od6/public/values?alt=json";
+        let filter = "alle";
+        const container = document.querySelector(".container");
+
+
+
+        const theTemplate = document.querySelector("template");
+
+
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            loadData();
+            //            visPersoner();
+            addEventListersToButtons();
+
+        }
+
+        async function loadData() {
+
+            const jsonData = await fetch(endpoint);
+            console.log(jsonData)
+
+            personer = await jsonData.json();
+            console.log(personer);
+
+            visPersoner();
+
+
+        }
+
+
+        function visPersoner() {
+            container.innerHTML = "";
+
+            //løb listen igennem og indsæt data i en template
+
+            personer.feed.entry.forEach(person => {
+
+                if (filter == "alle" || filter == person.gsx$sex.$t) {
+
+                    let klon = theTemplate.cloneNode(true).content;
+                    klon.querySelector("h2").textContent = person.gsx$navn.$t;
+                    klon.querySelector("h2").textContent += " " + person.gsx$efternavn.$t;
+                    klon.querySelector("img").src = person.gsx$billede.$t;
+                    klon.querySelector(".sex").textContent += person.gsx$sex.$t;
+                    klon.querySelector(".alder").textContent += person.gsx$alder.$t;
+                    klon.querySelector(".religion").textContent += person.gsx$religion.$t;
+                    klon.querySelector(".hobby").textContent += person.gsx$hobby.$t;
+                    klon.querySelector(".koeledyr").textContent += person.gsx$kaeledyr.$t;
+                    klon.querySelector(".job").textContent += person.gsx$job.$t;
+                    klon.querySelector(".by").textContent += person.gsx$by.$t;
+
+                    container.appendChild(klon);
+                }
+
+            })
+        }
+
+        function addEventListersToButtons() {
+            document.querySelectorAll(".filter").forEach(elm => {
+                elm.addEventListener("click", filtering);
+            })
+        }
+
+        function filtering() {
+            console.log("filter");
+            filter = this.dataset.køn;
+            visPersoner();
+        }
+
+    </script>
+
+</body>
+
+</html>
